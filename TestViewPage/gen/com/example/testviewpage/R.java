@@ -33,33 +33,40 @@ public final class R {
         public static final int ale=0x7f020009;
         public static final int alf=0x7f02000a;
         public static final int alg=0x7f02000b;
-        public static final int ic_launcher=0x7f02000c;
-        public static final int r8=0x7f02000d;
+        public static final int bg_not_login=0x7f02000c;
+        public static final int find=0x7f02000d;
+        public static final int friend=0x7f02000e;
+        public static final int ic_launcher=0x7f02000f;
+        public static final int me=0x7f020010;
+        public static final int r8=0x7f020011;
+        public static final int we_chat=0x7f020012;
     }
     public static final class id {
-        public static final int a=0x7f080003;
-        public static final int action_settings=0x7f08000f;
-        public static final int b=0x7f080006;
-        public static final int btn_a=0x7f080004;
-        public static final int btn_b=0x7f080007;
-        public static final int btn_c=0x7f08000a;
-        public static final int btn_d=0x7f08000d;
-        public static final int c=0x7f080009;
-        public static final int d=0x7f08000c;
+        public static final int a=0x7f080004;
+        public static final int action_settings=0x7f080010;
+        public static final int b=0x7f080007;
+        public static final int btn_a=0x7f080005;
+        public static final int btn_b=0x7f080008;
+        public static final int btn_c=0x7f08000b;
+        public static final int btn_d=0x7f08000e;
+        public static final int c=0x7f08000a;
+        public static final int d=0x7f08000d;
         public static final int framelayout=0x7f080002;
+        public static final int grd=0x7f080003;
         public static final int txt=0x7f080001;
-        public static final int txt_a=0x7f080005;
-        public static final int txt_b=0x7f080008;
-        public static final int txt_c=0x7f08000b;
-        public static final int txt_d=0x7f08000e;
+        public static final int txt_a=0x7f080006;
+        public static final int txt_b=0x7f080009;
+        public static final int txt_c=0x7f08000c;
+        public static final int txt_d=0x7f08000f;
         public static final int viewPage=0x7f080000;
     }
     public static final class layout {
         public static final int a=0x7f030000;
         public static final int activity_base=0x7f030001;
         public static final int activity_main=0x7f030002;
-        public static final int bottom_title=0x7f030003;
-        public static final int c=0x7f030004;
+        public static final int b=0x7f030003;
+        public static final int bottom_title=0x7f030004;
+        public static final int c=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f070000;
