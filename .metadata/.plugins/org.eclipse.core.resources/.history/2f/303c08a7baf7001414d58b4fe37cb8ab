@@ -1,0 +1,75 @@
+package com.anxiong.main;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.anxiong.fragment.MainFragment;
+import com.example.testviewpage.R;
+
+public class MainActivity extends FragmentActivity implements OnClickListener {
+
+	
+
+	private ImageView[] img;
+	private TextView[] txt;
+
+	private LinearLayout[] layout;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		img = new ImageView[4];
+		txt = new TextView[4];
+		layout = new LinearLayout[4];
+		
+		initView();
+
+		
+
+		replace(new MainFragment());
+	}
+
+	
+
+	private void initView() {
+		
+		findViewById(R.id.a).setOnClickListener(this);
+		findViewById(R.id.b).setOnClickListener(this);
+		findViewById(R.id.c).setOnClickListener(this);
+		findViewById(R.id.d).setOnClickListener(this);
+		
+		
+		
+		
+	
+		
+	}
+
+
+
+	/**
+	 * FragmentÌæ»»µÄ·½·¨
+	 * */
+	public void replace(Fragment fragment) {
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.framelayout, fragment).commit();
+	}
+
+
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

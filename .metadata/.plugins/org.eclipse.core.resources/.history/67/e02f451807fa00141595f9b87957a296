@@ -1,0 +1,7 @@
+package com.anxiong.fragment;
+
+
+
+public class NetPicFragment extends Fragment {
+
+}

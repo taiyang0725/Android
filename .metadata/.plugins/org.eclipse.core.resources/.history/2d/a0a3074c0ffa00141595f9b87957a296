@@ -1,0 +1,60 @@
+package com.anxiong.main;
+
+import android.os.Bundle;
+import android.widget.TextView;
+
+import com.anxiong.fragment.BFragment;
+import com.anxiong.fragment.BFragment.OnFromPicLocalListener;
+import com.anxiong.fragment.MainFragment;
+import com.anxiong.fragment.NetPicFragment;
+import com.anxiong.fragment.PicLocalFragment;
+import com.anxiong.fragment.PicLocalFragment.OnFromMainListener;
+import com.example.testviewpage.R;
+
+public class MainActivity extends BascActivity implements OnFromPicLocalListener,OnFromMainListener{
+
+	private TextView txtTit;
+	
+	private TextView txtBack;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		initView();
+
+	}
+
+	private void initView() {
+		
+		txtTit = (TextView) findViewById(R.id.txt);
+		txtBack=(TextView) findViewById(R.id.txt_back);
+		
+		replace(new MainFragment(txtTit));
+
+	}
+
+	@Override
+	public void fromPicLocal() {
+		replace(new PicLocalFragment(txtTit,txtBack));
+		
+	}
+
+	@Override
+	public void onFromMain() {
+		txtBack.setText("");
+		txtTit.setText("B");
+		replace(new BFragment());
+		
+	}
+
+	@Override
+	public void fromNet() {
+		replace(new NetPicFragment(txtTit,txtBack));
+		
+		
+	}
+
+	
+}

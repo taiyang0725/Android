@@ -1,0 +1,89 @@
+package com.anxiong.fragment;
+
+import java.lang.reflect.Field;
+import java.util.List;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.anxiong.adapter.PicAdapter;
+import com.anxiong.data.Pic;
+import com.example.testviewpage.R;
+
+public class PicLocalFragment extends Fragment {
+	
+	private View view;
+	private ViewPager pager;
+	private int[] lst;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		lst=Pic.getPicFoc();
+	}
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		view=inflater.inflate(R.layout.pic, null);
+		
+		init();
+		return view;
+	}
+
+	private void init() {
+		
+		pager=(ViewPager) view.findViewById(R.id.pic_page);
+		PicAdapter pAdapter=new PicAdapter(lst, getActivity());
+		pager.setAdapter(pAdapter);
+		pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+			
+			@Override
+			public void onPageSelected(int arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+//				pager.setCurrentItem(arg0);
+				
+			}
+		});
+		
+		
+		
+		
+	}
+	@Override
+	public void onDetach() {
+		super.onDetach();
+		// ��fragment����ʱͨ���������mChildFragmentManagerҲ����
+		try {
+			Field childFragmentManager = Fragment.class
+					.getDeclaredField("mChildFragmentManager");
+			childFragmentManager.setAccessible(true);
+			childFragmentManager.set(this, null);
+
+		} catch (NoSuchFieldException e) {
+			throw new RuntimeException(e);
+		} catch (IllegalAccessException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+
+
+}

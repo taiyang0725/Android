@@ -1,0 +1,19 @@
+package com.anxiong.main;
+
+import com.example.testviewpage.R;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+
+public class BascActivity extends FragmentActivity {
+	
+	/**
+	 * FragmentÌæ»»µÄ·½·¨
+	 * */
+	public void replace(Fragment fragment) {
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.framelayout, fragment).commit();
+	}
+
+
+}

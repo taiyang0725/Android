@@ -1,0 +1,60 @@
+package com.anxiong.fragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.anxiong.adapter.MyAdapter;
+import com.example.testviewpage.R;
+
+public class AFragment extends Fragment  {
+
+	private View view;
+
+	private ViewPager pager;
+	private List<Fragment> list;
+	private MyAdapter adapter;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		
+		super.onCreate(savedInstanceState);
+		
+		
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		view = inflater.inflate(R.layout.activity_base, null);
+		init();
+		return view;
+
+	}
+
+	private void init() {
+
+		list = new ArrayList<Fragment>();
+		list.add(new AFragment());
+		list.add(new BFragment());
+		list.add(new CFragment());
+		list.add(new DFragment());
+
+		pager = (ViewPager) findViewById(R.id.viewPage);
+		pager.setOnPageChangeListener(this);
+
+		adapter = new MyAdapter(getSupportFragmentManager(), list);
+		pager.setAdapter(adapter);
+
+	}
+
+	
+
+	
+}

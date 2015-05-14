@@ -1,0 +1,39 @@
+package com.anxiong.data;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+
+public class ReadTxt {
+	
+	private Reader reader;
+	private BufferedReader br;
+	private String content;
+	
+	private ReadTxt(){};
+	
+	public  void read(){
+		File file=new File("随遇而安.txt");
+		
+		 try {
+			reader=new FileReader(file);
+			 br=new BufferedReader(reader);
+			 while ((content=br.readLine())!=null) {
+				 
+				 System.out.println(content);
+				
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+
+}

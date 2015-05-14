@@ -1,0 +1,12 @@
+package com.anxiong.data;
+
+import java.io.File;
+
+public class ReadTxt {
+	
+	public void read(){
+		File file=new File("随遇而安.txt");
+		
+	}
+
+}

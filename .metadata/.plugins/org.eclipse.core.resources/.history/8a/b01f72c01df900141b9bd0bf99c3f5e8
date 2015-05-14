@@ -1,0 +1,10 @@
+package com.anxiong.data;
+
+public class ReadTxt {
+	
+	public void read(){
+		
+		
+	}
+
+}

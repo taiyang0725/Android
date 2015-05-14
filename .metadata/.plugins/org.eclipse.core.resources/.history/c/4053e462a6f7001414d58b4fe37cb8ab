@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8.5" />
+
+    <LinearLayout style="@style/set_title" >
+
+        <RelativeLayout style="@style/set_layout" 
+            android:layout_marginLeft="25dp">
+
+            <ImageView
+                android:id="@+id/btn_a"
+                style="@style/set_btn"
+                android:background="@drawable/alc"
+                 />
+
+            <TextView
+                style="@style/set_txt"
+                
+                android:text="微信" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/set_layout" >
+
+            <ImageView
+                android:id="@+id/btn_b"
+                style="@style/set_btn"
+                android:background="@drawable/ala" />
+
+            <TextView
+                style="@style/set_txt"
+                android:text="微信" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/set_layout" >
+
+            <ImageView
+                android:id="@+id/btn_c"
+                style="@style/set_btn"
+                android:background="@drawable/ale" />
+
+            <TextView
+                style="@style/set_txt"
+                android:text="微信" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/set_layout"
+            android:layout_alignParentRight="true" >
+
+            <ImageView
+                android:id="@+id/btn_d"
+                style="@style/set_btn"
+                android:background="@drawable/alg" />
+
+            <TextView
+                style="@style/set_txt"
+                android:text="微信" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

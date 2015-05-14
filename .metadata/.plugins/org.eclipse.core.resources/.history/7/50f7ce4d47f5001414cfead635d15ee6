@@ -1,0 +1,24 @@
+package com.anxiong.study;
+/**
+ * 反射
+ * */
+public class Reflect {
+
+	@SuppressWarnings("unused")
+	public static void main(String[] args) {
+		/**
+		 * 方法一
+		 * */
+		
+		A a=new A();
+		
+		@SuppressWarnings("rawtypes")
+		Class a1=a.getClass();
+		
+		System.out.println(a1);
+
+	}
+}
+
+class A {
+}

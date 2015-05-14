@@ -1,0 +1,20 @@
+package com.anxiong.study;
+/**
+ * 反射
+ * */
+public class Reflect {
+
+	public static void main(String[] args) {
+		/**
+		 * 方法一
+		 * */
+		
+		A a=new A();
+		
+		Class a1=a.getClass();
+
+	}
+}
+
+class A {
+}

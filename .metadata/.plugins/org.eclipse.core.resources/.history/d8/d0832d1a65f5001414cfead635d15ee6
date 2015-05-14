@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RadioGroup
+            android:id="@+id/main_tab"
+    		android:background="#e5e0e0"
+    		android:orientation="horizontal"
+    		android:layout_width="fill_parent"
+    		android:layout_height="49dp"
+    		android:gravity="center_vertical"
+    		android:layout_alignParentBottom="true"
+         >
+
+        <RadioButton
+            android:id="@+id/radiobutton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:background="@drawable/wechat0"
+           
+            android:text="微信"
+            style="@style/main_tab_bottom"
+ 
+           />
+
+        <RadioButton
+            android:id="@+id/radiobutton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/addlist0"
+            android:button="@null" 
+            android:text="通讯录"
+            style="@style/main_tab_bottom"
+            />
+
+        <RadioButton
+            android:id="@+id/radiobutton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/find0"
+            android:button="@null"
+            android:text="发现"
+            style="@style/main_tab_bottom"
+             />
+
+        <RadioButton
+            android:id="@+id/radiobutton4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/my0"
+            android:button="@null" 
+            android:text="我"
+            style="@style/main_tab_bottom"
+            />
+    </RadioGroup>
+
+</RelativeLayout>

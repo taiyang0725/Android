@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="<a href="http://schemas.android.com/apk/res/android">http://schemas.android.com/apk/res/android</a>" 
+    xmlns:test="<a href="http://schemas.android.com/apk/res/com.szy.custom">http://schemas.android.com/apk/res/com.szy.custom</a>" 
+    android:orientation="vertical" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    > 
+<TextView   
+    android:layout_width="fill_parent"  
+    android:layout_height="wrap_content"  
+    android:text="@string/hello" 
+    /> 
+<com.anxiong.customView.MyView 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    test:textSize="10px" 
+    test:textColor="#fff" 
+    /> 
+</LinearLayout>

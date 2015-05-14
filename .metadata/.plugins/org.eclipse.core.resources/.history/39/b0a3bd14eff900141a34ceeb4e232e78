@@ -1,0 +1,34 @@
+package com.anxiong.fragment;
+
+import com.example.testviewpage.R;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
+
+public class PicLocalFragment extends Fragment {
+	
+	private View view;
+	private ViewPager pager;
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		view=inflater.inflate(R.layout.pic, null);
+		
+		init();
+		return view;
+	}
+
+	private void init() {
+		
+		pager=(ViewPager) view.findViewById(R.id.pic_page);
+		
+		
+	}
+
+}

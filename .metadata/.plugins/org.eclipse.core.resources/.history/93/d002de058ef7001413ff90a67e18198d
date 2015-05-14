@@ -1,0 +1,20 @@
+package com.anxiong.adapter;
+
+import java.util.List;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+
+public class MyAdapter extends FragmentPagerAdapter {
+	
+	public MyAdapter(FragmentManager fm) {
+		super(fm);
+		
+	}
+
+	private List<Fragment> list;
+
+	
+
+}

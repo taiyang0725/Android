@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 找回密码布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_not_login"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/small2"
+        android:layout_marginLeft="@dimen/small4"
+        android:layout_marginRight="@dimen/small4"
+        android:layout_marginTop="@dimen/a2"
+        android:background="@drawable/edittext_pic_123" >
+
+        <EditText
+            android:id="@+id/edt_find_pwd_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/small2"
+            android:layout_marginLeft="@dimen/small4"
+            android:background="@null"
+            android:hint="@string/log_in_hint2" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_e_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginRight="@dimen/small4"
+        android:layout_marginTop="@dimen/small1"
+        android:text="@string/email_true"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_send_to"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/small2"
+        android:layout_marginLeft="@dimen/small4"
+        android:layout_marginRight="@dimen/small4"
+        android:layout_marginTop="@dimen/small2"
+        android:background="@drawable/orange"
+        android:text="@string/send_to"
+        android:textColor="@color/white" />
+
+</LinearLayout>

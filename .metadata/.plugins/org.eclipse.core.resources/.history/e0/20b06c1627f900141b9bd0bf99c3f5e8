@@ -1,0 +1,13 @@
+package com.anxiong.study;
+
+public class ReadTxt {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	
+
+	}
+
+}

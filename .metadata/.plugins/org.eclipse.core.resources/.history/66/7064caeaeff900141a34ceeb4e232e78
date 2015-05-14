@@ -1,0 +1,40 @@
+package com.anxiong.adapter;
+
+import android.content.Context;
+import android.support.v4.view.PagerAdapter;
+import android.view.View;
+import android.widget.ImageView;
+
+public class PicAdapter extends PagerAdapter{
+	
+	
+	private int[] lst;
+	private Context context;
+
+	public PicAdapter(int[] lst, Context context) {
+		super();
+		this.lst = lst;
+		this.context = context;
+	}
+
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return lst.length;
+	}
+
+	@Override
+	public boolean isViewFromObject(View arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		return arg0.equals(arg1);
+	}
+	
+	@Override
+	public Object instantiateItem(View container, int position) {
+		// TODO Auto-generated method stub
+		ImageView imageView=new ImageView(context);
+		
+		return imageView;
+	}
+
+}

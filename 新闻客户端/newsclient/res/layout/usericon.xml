@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 用户图像布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/small3"
+   android:background="@drawable/bg_last_minute_calendar"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txt_get_local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/small1"
+        android:text="@string/get_local"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size1"
+        android:textStyle="italic" />
+
+    <TextView
+         android:id="@+id/txt_online_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/small44"
+        android:text="@string/online_photo"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size1"
+        android:textStyle="italic" />
+
+</LinearLayout>

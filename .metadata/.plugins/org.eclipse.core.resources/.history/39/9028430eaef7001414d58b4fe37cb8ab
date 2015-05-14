@@ -1,0 +1,51 @@
+package com.anxiong.main;
+
+import java.util.List;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.anxiong.adapter.MyAdapter;
+import com.anxiong.fragment.AFragment;
+import com.example.testviewpage.R;
+
+public class MainActivity extends FragmentActivity {
+	
+	private ViewPager pager;
+	private List<Fragment> list;
+	private MyAdapter adapter;
+	
+	private ImageView [] img;
+	private TextView [] txt;
+	
+	private LinearLayout [] layout;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        replace(new AFragment());
+    }
+
+
+    
+    
+    
+    
+    
+    
+    /**
+	 * FragmentÌæ»»µÄ·½·¨
+	 * */
+	public void replace(Fragment fragment) {
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.framelayout, fragment).commit();
+	}
+    
+}

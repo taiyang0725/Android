@@ -1,0 +1,10 @@
+package com.anxiong.study;
+
+public class Reflect {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+class A{}

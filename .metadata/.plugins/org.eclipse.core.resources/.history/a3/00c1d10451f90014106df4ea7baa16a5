@@ -1,0 +1,47 @@
+package com.anxiong.customView;
+
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Paint.Style;
+import android.graphics.Rect;
+import android.util.AttributeSet;
+import android.view.View;
+
+import com.anxiong.customcontrol.R;
+ 
+public class MyView extends View { 
+    private Paint myPaint; 
+    private static final String myString = "Hello CustomView!"; 
+ 
+    public MyView(Context context) { 
+        super(context); 
+        // TODO Auto-generated constructor stub 
+     } 
+     
+    public MyView(Context context, AttributeSet attr) { 
+        super(context, attr); 
+         myPaint = new Paint(); 
+         TypedArray a = context.obtainStyledAttributes(attr, R.styleable.myView);//TypedArray是一个数组容器 
+        float textSize = a.getDimension(R.styleable.myView_textSize, 30);//防止在XML文件里没有定义，就加上了默认值30 
+        int textColor = a.getColor(R.styleable.myView_textColor, 0xFFFFFFFF);//同上,这里的属性是:名字_属性名 
+         myPaint.setTextSize(textSize); 
+         myPaint.setColor(textColor); 
+         a.recycle();//我的理解是：返回以前取回的属性，供以后使用。以前取回的可能就是textSize和textColor初始化的那段 
+     } 
+    @Override 
+    protected void onDraw(Canvas canvas) { 
+        // TODO Auto-generated method stub 
+        super.onDraw(canvas); 
+        //myPaint = new Paint(); 
+         myPaint.setColor(Color.RED); 
+         myPaint.setStyle(Style.FILL); 
+         
+         canvas.drawRect(new Rect(10,10,100,100), myPaint); 
+         myPaint.setColor(Color.WHITE); 
+         canvas.drawText(myString, 10, 100, myPaint); 
+     } 
+}

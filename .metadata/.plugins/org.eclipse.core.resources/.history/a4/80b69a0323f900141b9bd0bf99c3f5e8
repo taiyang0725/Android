@@ -1,0 +1,18 @@
+package com.anxiong.fragment;
+
+import com.anxiong.data.ReadTxt;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+
+public class BFragment extends Fragment {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		ReadTxt.getReadTxt().read();
+		System.out.println("BFragment++++++++++++++++++++++++++");
+	}
+
+}

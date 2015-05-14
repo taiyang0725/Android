@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 个人中心布局 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_not_login"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/img_domain_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/small44"
+            android:background="@drawable/ai5" />
+
+        <TextView
+            android:id="@+id/txt_domain_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small4"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small1"
+                android:text="@string/account_state"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_small" />
+
+            <TextView
+                android:id="@+id/txt_domain_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small1"
+                android:text="@string/qq_email"
+                android:textSize="@dimen/font_size_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small4"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/small1"
+                android:text="@string/qr_code"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_small" />
+
+            <ImageView
+                android:id="@+id/img_domain_qr_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small1"
+                android:background="@drawable/a8o" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small4"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small1"
+                android:text="@string/landing_location"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_small" />
+
+            <TextView
+                android:id="@+id/txt_domain_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small1"
+                android:text="@string/landing_location"
+                android:textSize="@dimen/font_size_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small4"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small1"
+                android:text="@string/well_known"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_small" />
+
+            <TextView
+                android:id="@+id/txt_domain_integration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small1"
+                android:text="@string/qq_email"
+                android:textSize="@dimen/font_size_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small4"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small1"
+                android:text="@string/dasd"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_small" />
+
+            <EditText
+                android:id="@+id/edt_domain_dasd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small1"
+                android:background="@null"
+                android:text="@string/dasd_content"
+                android:textSize="@dimen/font_size_small" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_domain_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_ccount_cancellation"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/btn_domain_camera_icon"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/small2"
+            android:layout_marginLeft="@dimen/small2"
+            android:layout_marginRight="@dimen/small3"
+            android:layout_weight="1"
+            android:background="@color/orange"
+            android:text="@string/online_photo"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_domain_local_icon"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/small2"
+            android:layout_marginBottom="@dimen/small3"
+            android:layout_marginLeft="@dimen/small3"
+            android:layout_marginRight="@dimen/small2"
+            android:layout_weight="1"
+            android:background="@color/orange"
+            android:text="@string/get_local"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_ccount_cancellation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/small2"
+        android:layout_above="@+id/btn_ccount_cancellation1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/small44"
+        android:layout_marginRight="@dimen/small44"
+        android:background="@drawable/green"
+        android:text="@string/ccount_cancellation"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_ccount_cancellation1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/small2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/small44"
+        android:layout_marginRight="@dimen/small44"
+        android:background="@drawable/green"
+        android:text="@string/ccount_cancellation"
+        android:textColor="@color/white"
+        android:visibility="invisible" />
+
+</RelativeLayout>

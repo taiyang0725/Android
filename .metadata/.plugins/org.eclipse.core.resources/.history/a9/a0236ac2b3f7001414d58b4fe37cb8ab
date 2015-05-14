@@ -1,0 +1,33 @@
+package com.anxiong.fragment;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
+public class AFragment extends Fragment {
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		return setLayout();
+	}
+
+	private View setLayout(){
+		RelativeLayout layout=new RelativeLayout(getActivity());
+		
+		RelativeLayout.LayoutParams p=new RelativeLayout.LayoutParams
+				(RelativeLayout.LayoutParams.MATCH_PARENT,
+						RelativeLayout.LayoutParams.MATCH_PARENT);
+		
+		ImageView img=new ImageView(getActivity());
+		view.set
+		return layout;
+		
+		
+	}
+}

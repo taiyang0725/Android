@@ -1,0 +1,22 @@
+<?xml 
+version="1.0" encoding="utf-8"?>
+<LinearLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+              
+xmlns:test="http://schemas.android.com/apk/res/com.android.tutor"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="789"
+    />
+<com.android.tutor.MyView
+	android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    test:textSize="20px"
+    test:textColor="#fff"
+/>
+</LinearLayout>

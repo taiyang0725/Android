@@ -1,0 +1,6 @@
+1431481884925	Rename type 'Picture'
+1431486021135	Rename package 'com.anxiong.picture'
+1431486057030	Rename package 'com.anxiong.date'
+1431489728501	Rename resource '随遇而安.txt'
+1431585221145	Rename resource 'b_pic.xml'
+1431594818020	Extract method 'getPic'

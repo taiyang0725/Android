@@ -1,0 +1,38 @@
+package com.anxiong.main;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.widget.TextView;
+
+import com.anxiong.fragment.BFragment.OnFromMainListener;
+import com.anxiong.fragment.MainFragment;
+import com.anxiong.fragment.PicLocalFragment;
+import com.example.testviewpage.R;
+
+public class MainActivity extends BascActivity implements OnFromMainListener{
+
+	private TextView txt;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		initView();
+
+	}
+
+	private void initView() {
+		txt = (TextView) findViewById(R.id.txt);
+		replace(new MainFragment(txt));
+
+	}
+
+	@Override
+	public void fromPicLocal() {
+		replace(new PicLocalFragment());
+		
+	}
+
+	
+}

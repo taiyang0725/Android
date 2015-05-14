@@ -1,0 +1,97 @@
+package com.anxiong.fragment;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+
+import com.example.testviewpage.R;
+
+
+
+public class NetPicFragment extends Fragment {
+	
+	private View view;
+	
+	private EditText edt;
+	private Button btn;
+	private ImageView img;
+	private ProgressBar bar;
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		view=inflater.inflate(R.layout.net_pic,null);
+		init();
+		return view;
+	}
+
+	private void init() {
+		
+		edt=(EditText) view.findViewById(R.id.edt_net);
+		bar=(ProgressBar) view.findViewById(R.id.progressBar1);
+		img=(ImageView) view.findViewById(R.id.img_net);
+		view.findViewById(R.id.btn_net).setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		
+	}
+	
+	class PicDown extends AsyncTask<String, Integer, Bitmap>{
+		
+		@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			super.onPreExecute();
+		}
+
+		@Override
+		protected Bitmap doInBackground(String... params) {
+			Bitmap bitmap=null;
+			try {
+				String path=params[0];
+				URL url=new URL(path);
+				HttpURLConnection connection=(HttpURLConnection) url.openConnection();
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			
+			
+			return bitmap;
+		}
+		@Override
+		protected void onProgressUpdate(Integer... values) {
+			// TODO Auto-generated method stub
+			super.onProgressUpdate(values);
+		}
+		@Override
+		protected void onPostExecute(Bitmap result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+		}
+		
+		
+	}
+
+}

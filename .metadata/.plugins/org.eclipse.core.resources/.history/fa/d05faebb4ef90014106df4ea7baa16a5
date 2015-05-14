@@ -1,0 +1,9 @@
+package com.anxiong.customView;
+
+import android.view.View;
+
+public class MyView extends View {
+
+	
+
+}

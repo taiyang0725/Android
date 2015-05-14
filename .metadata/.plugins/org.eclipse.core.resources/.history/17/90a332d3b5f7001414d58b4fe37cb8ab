@@ -1,0 +1,79 @@
+package com.anxiong.fragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.anxiong.adapter.MyAdapter;
+import com.example.testviewpage.R;
+
+public class MainFragment extends Fragment implements OnPageChangeListener  {
+
+	private View view;
+
+	private ViewPager pager;
+	private List<Fragment> list;
+	private MyAdapter adapter;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		
+		super.onCreate(savedInstanceState);
+		
+		
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		view = inflater.inflate(R.layout.activity_base, null);
+		init();
+		return view;
+
+	}
+
+	private void init() {
+
+		list = new ArrayList<Fragment>();
+		list.add(new AFragment());
+		list.add(new BFragment());
+		list.add(new CFragment());
+		list.add(new DFragment());
+
+		pager = (ViewPager) view.findViewById(R.id.viewPage);
+		pager.setOnPageChangeListener(this);
+
+		adapter = new MyAdapter(getChildFragmentManager(), list);
+		pager.setAdapter(adapter);
+
+	}
+
+	@Override
+	public void onPageScrollStateChanged(int arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onPageScrolled(int arg0, float arg1, int arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onPageSelected(int arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+	
+}

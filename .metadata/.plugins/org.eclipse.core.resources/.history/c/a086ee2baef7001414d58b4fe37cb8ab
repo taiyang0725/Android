@@ -1,0 +1,97 @@
+package com.anxiong.main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.anxiong.adapter.MyAdapter;
+import com.anxiong.fragment.AFragment;
+import com.anxiong.fragment.BFragment;
+import com.anxiong.fragment.CFragment;
+import com.anxiong.fragment.DFragment;
+import com.example.testviewpage.R;
+
+public class MainActivity extends FragmentActivity implements OnPageChangeListener {
+	
+	private ViewPager pager;
+	private List<Fragment> list;
+	private MyAdapter adapter;
+	
+	private ImageView [] img;
+	private TextView [] txt;
+	
+	private LinearLayout [] layout;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        img=new ImageView[4];
+		txt=new TextView[4];
+		layout=new LinearLayout[4];
+		
+		init();
+        
+        replace(new AFragment());
+    }
+
+private void init() {
+		
+		list=new ArrayList<Fragment>();
+		list.add(new BFragment());
+		list.add(new CFragment());
+		list.add(new DFragment());
+		
+		pager=(ViewPager) findViewById(R.id.viewPage);
+		pager.setOnPageChangeListener(this);
+		
+		adapter=new MyAdapter(getSupportFragmentManager(),list);
+		pager.setAdapter(adapter);
+		
+		
+		
+		
+
+	}
+    
+    
+    
+    
+    
+    
+    /**
+	 * FragmentÌæ»»µÄ·½·¨
+	 * */
+	public void replace(Fragment fragment) {
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.framelayout, fragment).commit();
+	}
+
+	@Override
+	public void onPageScrollStateChanged(int arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onPageScrolled(int arg0, float arg1, int arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onPageSelected(int arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+    
+}
