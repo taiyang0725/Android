@@ -20,12 +20,10 @@ import android.widget.TextView;
 
 import com.anxiong.adapter.MyAdapter;
 import com.anxiong.data.Pic;
-import com.anxiong.data.ReadTxt;
-import com.anxiong.data.Tools;
 import com.example.testviewpage.R;
 
-@SuppressLint("ValidFragment") 
-public class MainFragment extends Fragment implements OnPageChangeListener,
+@SuppressLint("ValidFragment")
+public class MainFragment extends BaseFragment implements OnPageChangeListener,
 		OnClickListener {
 
 	private View view;
@@ -37,17 +35,26 @@ public class MainFragment extends Fragment implements OnPageChangeListener,
 	private LinearLayout[] layout;
 	private ImageView[] img;
 	private TextView[] txt;
+	private int pageNum;
 
 	private int[] picNor;
 	private int[] picFoc;
+
+	private TextView txtTit;// 标题
 	
-	private TextView txtTit;//标题
-	private String [] tit={"A","B","C","D"};
 
 	
-	public MainFragment(TextView txtTit) {
-		
+
+	
+
+	public MainFragment(LinearLayout[] layout, ImageView[] img, TextView[] txt,
+			TextView txtTit,int pageNum) {
+		super();
+		this.layout = layout;
+		this.img = img;
+		this.txt = txt;
 		this.txtTit = txtTit;
+		this.pageNum = pageNum;
 	}
 
 	@Override
@@ -55,14 +62,8 @@ public class MainFragment extends Fragment implements OnPageChangeListener,
 
 		super.onCreate(savedInstanceState);
 
-		layout = new LinearLayout[4];
-		img = new ImageView[4];
-		txt = new TextView[4];
-
 		picNor = Pic.getPicNor();
 		picFoc = Pic.getPicFoc();
-		
-		
 
 	}
 
@@ -71,6 +72,7 @@ public class MainFragment extends Fragment implements OnPageChangeListener,
 			Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.activity_base, null);
 		init();
+
 		return view;
 
 	}
@@ -89,33 +91,17 @@ public class MainFragment extends Fragment implements OnPageChangeListener,
 		adapter = new MyAdapter(getChildFragmentManager(), list);
 		pager.setAdapter(adapter);
 
-		img[0] = (ImageView) view.findViewById(R.id.btn_a);
-		img[1] = (ImageView) view.findViewById(R.id.btn_b);
-		img[2] = (ImageView) view.findViewById(R.id.btn_c);
-		img[3] = (ImageView) view.findViewById(R.id.btn_d);
+		for (int i = 0; i < layout.length; i++) {
+			layout[i].setOnClickListener(this);
+		}
 
-		txt[0] = (TextView) view.findViewById(R.id.txt_a);
-		txt[1] = (TextView) view.findViewById(R.id.txt_b);
-		txt[2] = (TextView) view.findViewById(R.id.txt_c);
-		txt[3] = (TextView) view.findViewById(R.id.txt_d);
-
-		view.findViewById(R.id.a).setOnClickListener(this);
-		view.findViewById(R.id.b).setOnClickListener(this);
-		view.findViewById(R.id.c).setOnClickListener(this);
-		view.findViewById(R.id.d).setOnClickListener(this);
-		
-		
+		backPage(pageNum);
 	}
 
 	@Override
-	public void onPageScrollStateChanged(int arg0) {
-
-	}
-
+	public void onPageScrollStateChanged(int arg0) {}
 	@Override
-	public void onPageScrolled(int arg0, float arg1, int arg2) {
-		
-	}
+	public void onPageScrolled(int arg0, float arg1, int arg2) {}
 
 	@Override
 	public void onPageSelected(int arg0) {
@@ -125,17 +111,17 @@ public class MainFragment extends Fragment implements OnPageChangeListener,
 		case 0:
 			setImgBg(img, 0);
 			setTxtColor(txt, 0);
-			
+
 			break;
 		case 1:
 			setImgBg(img, 1);
 			setTxtColor(txt, 1);
-			
+
 			break;
 		case 2:
 			setImgBg(img, 2);
 			setTxtColor(txt, 2);
-			
+
 			break;
 		case 3:
 			setImgBg(img, 3);
@@ -162,6 +148,37 @@ public class MainFragment extends Fragment implements OnPageChangeListener,
 			throw new RuntimeException(e);
 		} catch (IllegalAccessException e) {
 			throw new RuntimeException(e);
+		}
+
+	}
+
+	private void backPage(int index) {
+
+		pager.setCurrentItem(index);
+
+		switch (index) {
+		case 0:
+			setImgBg(img, 0);
+			setTxtColor(txt, 0);
+
+			break;
+		case 1:
+			setImgBg(img, 1);
+			setTxtColor(txt, 1);
+
+			break;
+		case 2:
+			setImgBg(img, 2);
+			setTxtColor(txt, 2);
+
+			break;
+		case 3:
+			setImgBg(img, 3);
+			setTxtColor(txt, 3);
+			break;
+
+		default:
+			break;
 		}
 
 	}
@@ -208,7 +225,7 @@ public class MainFragment extends Fragment implements OnPageChangeListener,
 
 	public void setTxtColor(TextView[] txt, int i) {
 		txt[i].setTextColor(Color.parseColor("#45C01A"));
-		txtTit.setText(tit[i]);
+		
 
 		for (int j = 0; j < txt.length; j++) {
 			if (j != i) {

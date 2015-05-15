@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 
 import com.example.testviewpage.R;
 
-public class AFragment extends Fragment {
+public class AFragment extends BaseFragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

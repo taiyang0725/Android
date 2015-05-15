@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.view.Window;
 
 import com.example.testviewpage.R;
@@ -11,11 +12,11 @@ import com.example.testviewpage.R;
 public class BascActivity extends FragmentActivity {
 	
 	/**
-	 * ÆÁ¿í
+	 * ï¿½ï¿½ï¿½ï¿½
 	 * */
 	protected int screenW;
 	/**
-	 * ÆÁ¸ß
+	 * ï¿½ï¿½ï¿½ï¿½
 	 * */
 	protected int screenH;
 
@@ -30,19 +31,19 @@ public class BascActivity extends FragmentActivity {
 	}
 
 	/**
-	 * ÉèÖÃÈ«ÆÁµÄ·½·¨
+	 * ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
 	 * */
 	private void setFullScreen() {
 
 		/**
-		 * ÉèÖÃ±êÌâÀ¸ÎªÒþ²ØµÄ·½·¨
+		 * ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ØµÄ·ï¿½ï¿½ï¿½
 		 * */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 	}
 
 	/**
-	 * »ñÈ¡ÆÁÄ»´óÐ¡
+	 * ï¿½ï¿½È¡ï¿½ï¿½Ä»ï¿½ï¿½Ð¡
 	 * */
 	private void initScreen() {
 
@@ -56,12 +57,24 @@ public class BascActivity extends FragmentActivity {
 	}
 	
 	/**
-	 * FragmentÌæ»»µÄ·½·¨
+	 * Fragmentï¿½æ»»ï¿½Ä·ï¿½ï¿½ï¿½
 	 * */
 	public void replace(Fragment fragment) {
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.framelayout, fragment).commit();
 	}
 
+	public void setVisibility(View v){
+		switch (v.getVisibility()) {
+		case View.GONE:
+			v.setVisibility(View.VISIBLE);
+		case View.VISIBLE:
+			v.setVisibility(View.GONE);
+			break;
 
+		default:
+			break;
+		}
+		
+	}
 }

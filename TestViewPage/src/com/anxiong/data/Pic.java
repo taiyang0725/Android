@@ -1,5 +1,11 @@
 package com.anxiong.data;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.Context;
+
+import com.anxiong.mode.UIEntity;
 import com.example.testviewpage.R;
 
 public class Pic {
@@ -18,6 +24,35 @@ public class Pic {
 				R.drawable.alf };
 		return bg_focus;
 
+	}
+	public static List<UIEntity> getPop(Context context){
+		
+		List<UIEntity> list=new ArrayList<UIEntity>();
+		
+		int [] icon={R.drawable.amz,R.drawable.anm,R.drawable.ao0,R.drawable.ao6};
+		String [] txt=context.getResources().getStringArray(R.array.pop);
+		
+		for (int i = 0; i < txt.length; i++) {
+			UIEntity u=new UIEntity();
+			u.setIcon(icon[i]);
+			u.setName(txt[i]);
+			list.add(u);
+			
+		}
+		
+		
+		
+		
+		
+		
+		return list;
+		
+		
+		
+	
+		
+		
+		
 	}
 
 }
